@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vigor Barber - Salta Capital</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #111;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        header {
+            background-color: #000;
+            border-bottom: 3px solid #D4AF37;
+            padding: 24px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            letter-spacing: 4px;
+            color: #D4AF37;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        header p {
+            color: #aaa;
+            margin: 4px 0 0;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+
+        .divider {
+            border-top: 1px solid #D4AF37;
+            opacity: 0.4;
+            margin: 0 auto;
+            width: 60px;
+        }
+
+        .info-section {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .info-section h2 {
+            font-size: 1rem;
+            letter-spacing: 3px;
+            color: #D4AF37;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .info-section p {
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .service-item {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-size: 0.9rem;
+            color: #eee;
+            min-width: 140px;
+            text-align: center;
+        }
+
+        .service-item span {
+            display: block;
+            color: #D4AF37;
+            font-weight: bold;
+            margin-top: 4px;
+        }
+
+        footer {
+            text-align: center;
+            color: #444;
+            font-size: 0.8rem;
+            padding: 24px;
+            border-top: 1px solid #222;
+            margin-top: 40px;
+        }
+
+        /* ----- Personalización del widget de n8n ----- */
+        :root {
+            --chat--color-primary: #D4AF37;
+            --chat--color-primary-shade-50: #b8971f;
+            --chat--color-primary-shade-100: #a07f10;
+            --chat--color-secondary: #111;
+            --chat--color-secondary-shade-50: #1a1a1a;
+            --chat--color-white: #ffffff;
+            --chat--color-light: #f9f9f9;
+            --chat--color-medium: #d2d4d9;
+            --chat--color-dark: #101330;
+            --chat--color-disabled: #777;
+            --chat--color-typing: #404040;
+            --chat--header--color: #ffffff;
+            --chat--header--background: #000000;
+            --chat--message--bot--background: #1a1a1a;
+            --chat--message--bot--color: #eeeeee;
+            --chat--message--user--background: #D4AF37;
+            --chat--message--user--color: #000000;
+            --chat--toggle--background: #D4AF37;
+            --chat--toggle--hover--background: #b8971f;
+            --chat--toggle--active--background: #a07f10;
+            --chat--toggle--color: #000000;
+            --chat--toggle--size: 64px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="./img/logo.png" alt="Vigor Barber Logo" width="110" style="margin-bottom:10px; border-radius:50%;">
+        <h1>Vigor Barber</h1>
+        <p>Gorriti 40, Salta &mdash; Lunes a Sábados 10:00 a 21:00</p>
+    </header>
+
+    <div class="info-section">
+        <hr class="divider">
+        <br>
+        <h2>Nuestros Servicios</h2>
+        <div class="services-grid">
+            <div class="service-item">Corte de Cabello <span>$15.000</span></div>
+            <div class="service-item">Corte y Barba <span>$18.000</span></div>
+            <div class="service-item">Promo Amigos <span>$25.000</span></div>
+            <div class="service-item">Promo del Interior <span>$12.000</span></div>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <h2>Horarios</h2>
+        <p>
+            Lunes a Sábados: 10:00 a 21:00<br>
+            Domingos y Feriados: Cerrado
+        </p>
+    </div>
+
+    <footer>
+        &copy; 2026 Vigor Barber — Gorriti 40, Salta, Argentina
+    </footer>
+
+    <!-- Widget de n8n -->
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+        createChat({
+            webhookUrl: 'https://n8ncurso2025-n8n.mos4xj.easypanel.host/webhook/ac6b8b71-edbe-4ff8-a944-2c24f4632fa7/chat',
+            webhookConfig: {
+                method: 'POST',
+                headers: {}
+            },
+            target: '#n8n-chat',
+            mode: 'window',
+            chatInputKey: 'chatInput',
+            chatSessionKey: 'sessionId',
+            metadata: {},
+            showWelcomeScreen: false,
+            defaultLanguage: 'es',
+            initialMessages: [
+                'Bienvenido a Vigor Barber.',
+
+            ],
+            i18n: {
+                es: {
+                    title: 'Vigor Barber ✂️',
+                    subtitle: 'Gorriti 40, Salta — Lun a Sáb 10:00 a 21:00',
+                    footer: 'Vigor Barber',
+                    getStarted: 'Nueva Consulta',
+                    inputPlaceholder: 'Escribe tu consulta...',
+                },
+            },
+        });
+    </script>
+
+</body>
+
+</html>
